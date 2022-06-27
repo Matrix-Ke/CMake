@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 17) # 方法一，全局设置
 set(CMAKE_CXX_FLAGS "/GR-") # 设置关闭RTTI
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# ===================================设置CMakeInclude路径=======================
+set(CMAKE_MODULE_PATH {CMAKE_SOURCE_DIR})
+
 # Cmake划分目录
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -60,3 +63,6 @@ if(NOT SET_UP_CONFIGURATIONS_DONE)
     set(CMAKE_EXE_LINKER_FLAGS_PROFILE "${CMAKE_EXE_LINKER_FLAGS_RELEASE}")
     set(CMAKE_SHARED_LINKER_FLAGS_PROFILE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE}")
 endif()
+
+#==============================设置变量控制include===========================
+set(SetupProject_FOUND TRUE)

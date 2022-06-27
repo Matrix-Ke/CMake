@@ -21,3 +21,6 @@ FetchContent_MakeAvailable(spdlog)
 include(cmake/CMakeFetchContent.cmake)
 include(CMakeInit)
 target_link_libraries(test_demo PRIVATE CMakeInit)
+
+#==============================设置变量控制include===========================
+set(CMakeFetchContent_FOUND TRUE)

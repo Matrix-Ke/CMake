@@ -3,7 +3,6 @@
 function(Add_all_subdirectory)
     file(GLOB _children LIST_DIRECTORIES true RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*)
     set(_dirlist "")
-
     foreach(_child ${_children})
         if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${_child}/CMakeLists.txt)
             list(APPEND _dirlist ${_child})
@@ -18,3 +17,6 @@ function(GetCurrentDirectoryName _current_dir_name)
     string(REPLACE " " "_" temp_dir_name ${temp_dir_name})
     set(${_current_dir_name} ${temp_dir_name} PARENT_SCOPE)
 endfunction(GetCurrentDirectoryName current_dir_name)
+
+#==============================设置变量控制include===========================
+set(CMakeInit_FOUND TRUE)
