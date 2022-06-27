@@ -1,3 +1,26 @@
+#example
+# 添加第三方依赖包
+function(FetchContent_ForTarget)
+    set(option TEST_Option)
+    set(oneValueArgs TargetName Git_Url Output_Dir)
+    set(multiValueArgs Other)
+    cmake_parse_arguments(ArgPrefix "${option}" "${oneValueArgs}"  "${multiValueArgs}" ${ARGN})
+    # 通过 prefix_参数名: 例如 ArgPrefix_TEST_Option
+    message("TEST_Option = ${ArgPrefix_TEST_Option};")
+    message("TargetName = ${ArgPrefix_TargetName};")
+    message("Git_Url = ${ArgPrefix_Git_Url};")
+    message("Other  = ${ArgPrefix_Other};")
+    message("Output_Dir  = ${ArgPrefix_Output_Dir};")
+#     Fetchcontent_declare(
+#     ${ArgPrefix_TargetName}	#库名字
+#     GIT_REPOSITORY   ${ArgPrefix_Git_Url}	# 仓库地址
+#     # GIT_TAG v1.x # 库版本
+#     SOURCE_DIR ${ArgPrefix_Output_Dir} # 指定库下载地址
+#     )
+# FetchContent_MakeAvailable(spdlog)
+endfunction(FetchContent_ForTarget)
+
+
 # ===========================================全局函数================================
 # 添加子文件夹
 function(Add_all_subdirectory)
