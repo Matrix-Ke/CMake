@@ -1,7 +1,7 @@
 # 添加第三方依赖包
-set(Fetch_Name "${Fetch_Name}")
-set(Fetch_Url  "git@github.com:gabime/${Fetch_Name}.git")
-set(Output_Dir  "${CMAKE_CURRENT_SOURCE_DIR}/_deps/${Fetch_Name}")
+set(Fetch_Name "BasicTool")
+set(Fetch_Url  "git@github.com:Matrix-Ke/MBasicTool.git")
+set(Output_Dir  "${CMAKE_CURRENT_SOURCE_DIR}/${Fetch_Name}")
 Fetchcontent_declare(
     ${Fetch_Name}	#库名字
     GIT_REPOSITORY  ${Fetch_Url}	# 仓库地址
@@ -11,10 +11,10 @@ Fetchcontent_declare(
 FetchContent_MakeAvailable(${Fetch_Name})
 
 if(TARGET ${Fetch_Name})
-    option(SPDLOG_BUILD_EXAMPLE "" OFF)
-    option(SPDLOG_INSTALL "" OFF)
+    # option(SPDLOG_BUILD_EXAMPLE "" OFF)
+    # option(SPDLOG_INSTALL "" OFF)
     # add_subdirectory(_deps/${Fetch_Name})
-    set_target_properties(${Fetch_Name} PROPERTIES FOLDER BasicTool)
+    set_target_properties(${Fetch_Name} PROPERTIES FOLDER ${Fetch_Name})
     message(STATUS  ${Fetch_Name}:" ${Fetch_Name} target add successfully")
 endif()
 
