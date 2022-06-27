@@ -6,8 +6,6 @@ set(CMAKE_CXX_STANDARD 17) # 方法一，全局设置
 set(CMAKE_CXX_FLAGS "/GR-") # 设置关闭RTTI
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-message(STATUS "Version: ${PROJECT_VERSION}")
-
 # Cmake划分目录
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
