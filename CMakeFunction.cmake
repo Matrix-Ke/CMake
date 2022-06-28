@@ -42,4 +42,4 @@ function(GetCurrentDirectoryName _current_dir_name)
 endfunction(GetCurrentDirectoryName current_dir_name)
 
 #==============================设置变量控制include===========================
-set(CMakeInit_FOUND TRUE)
+set(CMakeFunction_FOUND TRUE)
